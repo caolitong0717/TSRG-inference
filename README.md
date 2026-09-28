@@ -12,7 +12,7 @@
 
 ## 如何下载、安装和运行
 
-请从 [保姆级中文使用说明](DOWNLOAD_README_CN.md) 开始。准备两块 CUDA GPU，以及从官方获得的 Puffin 源码和基础模型 `Puffin-Base.pth`；另需取得授权访问的 R19 Epoch-3 LoRA 适配器（程序检查 SHA256）。GPU 版 PyTorch 应按设备驱动单独安装，随后安装本仓库 `requirements-inference.txt`。已验证版本为 PyTorch 2.10.0、Transformers 5.0.0、PEFT 0.19.1。
+请从 [保姆级中文使用说明](DOWNLOAD_README_CN.md) 开始；需要完整的服务器部署命令及文件夹示意，可直接查看 [两块 GPU 部署教程](docs/DEPLOY_CN.md)。准备两块 CUDA GPU，以及从官方获得的 Puffin 源码和基础模型 `Puffin-Base.pth`；另需取得授权访问的 R19 Epoch-3 LoRA 适配器（程序检查 SHA256）。GPU 版 PyTorch 应按设备驱动单独安装，随后安装本仓库 `requirements-inference.txt`。已验证版本为 PyTorch 2.10.0、Transformers 5.0.0、PEFT 0.19.1。
 
 在本仓库根目录运行命令（下列路径是示例，需根据实际文件位置修改）：
 
