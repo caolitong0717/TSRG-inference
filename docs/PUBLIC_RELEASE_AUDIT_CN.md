@@ -42,3 +42,11 @@
 原始 `adapter_config.json` 是 1,102 bytes，SHA256 `324d0d7ec6b086d06f04e4cef22629139fd86d9f6d5d1268a7b5fb62276c12a1`；配置 r=8、alpha=16、目标 q/k/v/o。其 `base_model_name_or_path` 为原 Kaggle 工作环境路径 `/kaggle/working/tourism_puffin_r19_full_pitch_specialist/qwen_text_assets`；这不是网络访问凭据，但不适合误当成外部部署路径，且须保留原始文件不做字节级修改。代码目前由用户提供 `Puffin-Base.pth` 并显式向 PEFT 提供已经构造的基础模型，尚未针对任何“清理路径后的配置副本”做双 GPU 独立运行验证。若后续发布修改过的配置，要分别标明原始与发布配置的 SHA256，并完成 GPU smoke test。
 
 本轮仅验证 ZIP 完整性及 safetensors 元数据/文件结构，不运行大型模型、不复现 R20 正式 BF16 test239，也不构成权利或公开分发审批。对外正式上传和仓库转 Public 继续保持阻止状态，等待署名、成果归属与第三方许可证复核。
+
+## 2026-09-28 作者授权及发布包准备更新
+
+项目开发者在本项目会话中明确表示 TSRG 为其本人开发，且同意公开自己的推理代码与 R19 LoRA。该事实用于记录项目成果公开意愿，不代表其能替 Puffin、Wikimedia 或其他第三方权利人授予超出原许可的权利；外部使用按非商业研究边界和相应上游条款说明。
+
+已经根据用户实际上传的冻结模型 ZIP 生成私有候选发布附件 `TSRG-R19-Epoch3-LoRA-v0.1.0-rc1_PRIVATE-REVIEW.zip`，大小 8,020,511 bytes，SHA256 `91119dd6408d9108e553ba7857d512f02d8b159c7c0021b6309f3d1c9386ef56`。内含字节原样的 `adapter_model.safetensors`（8,745,704 bytes；SHA256 `1dc8afa37c4947d30f58e9ae3aa260c76730dd7201a042f98fcbfd97ae0da8b0`）、原始 `adapter_config.json`、校验清单、README 和上游 Puffin S-Lab License 1.0 全文。ZIP CRC、文件白名单、解压路径安全和二进制/配置逐字节一致性测试通过。该文件是当前会话本地交付物，**尚未提交到 GitHub Release**。原配置的 Kaggle 路径是训练时元数据；现有推理代码明确向 PEFT 传入构造好的基础模型对象，原配置加载曾在双 T4 FP16 运行通过，本轮没有重新运行 GPU。
+
+剩余操作是将已有的候选附件作为单独 Release Asset 上传、填写正式下载地址、核对无权限的新账户下载与 GPU 安装情况，最后才把独立使用仓库转 Public（原科研档案继续 Private）。
