@@ -47,6 +47,6 @@
 
 项目开发者在本项目会话中明确表示 TSRG 为其本人开发，且同意公开自己的推理代码与 R19 LoRA。该事实用于记录项目成果公开意愿，不代表其能替 Puffin、Wikimedia 或其他第三方权利人授予超出原许可的权利；外部使用按非商业研究边界和相应上游条款说明。
 
-已经根据用户实际上传的冻结模型 ZIP 生成私有候选发布附件 `TSRG-R19-Epoch3-LoRA-v0.1.0-rc1_PRIVATE-REVIEW.zip`，大小 8,020,511 bytes，SHA256 `91119dd6408d9108e553ba7857d512f02d8b159c7c0021b6309f3d1c9386ef56`。内含字节原样的 `adapter_model.safetensors`（8,745,704 bytes；SHA256 `1dc8afa37c4947d30f58e9ae3aa260c76730dd7201a042f98fcbfd97ae0da8b0`）、原始 `adapter_config.json`、校验清单、README 和上游 Puffin S-Lab License 1.0 全文。ZIP CRC、文件白名单、解压路径安全和二进制/配置逐字节一致性测试通过。该文件是当前会话本地交付物，**尚未提交到 GitHub Release**。原配置的 Kaggle 路径是训练时元数据；现有推理代码明确向 PEFT 传入构造好的基础模型对象，原配置加载曾在双 T4 FP16 运行通过，本轮没有重新运行 GPU。
+已经根据用户实际上传的冻结模型 ZIP 生成候选发布附件（仅修正包内说明文字与随附清单，权重和原始配置字节未变） `TSRG-R19-Epoch3-LoRA-v0.1.0-rc1.zip`，大小 8,020,529 bytes，SHA256 `5c277a6a467f0d3e4f8befd53821247aa6c7691ce56e31ed1ecef8964e3ab076`。内含字节原样的 `adapter_model.safetensors`（8,745,704 bytes；SHA256 `1dc8afa37c4947d30f58e9ae3aa260c76730dd7201a042f98fcbfd97ae0da8b0`）、原始 `adapter_config.json`、校验清单、README 和上游 Puffin S-Lab License 1.0 全文。ZIP CRC、文件白名单、解压路径安全和二进制/配置逐字节一致性测试通过。该文件是当前会话本地交付物，**尚未提交到 GitHub Release**。原配置的 Kaggle 路径是训练时元数据；现有推理代码明确向 PEFT 传入构造好的基础模型对象，原配置加载曾在双 T4 FP16 运行通过，本轮没有重新运行 GPU。
 
 剩余操作是将已有的候选附件作为单独 Release Asset 上传、填写正式下载地址、核对无权限的新账户下载与 GPU 安装情况，最后才把独立使用仓库转 Public（原科研档案继续 Private）。
