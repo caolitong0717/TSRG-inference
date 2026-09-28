@@ -34,4 +34,4 @@ SHA256(adapter_model.safetensors):
 - [Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) 标注 Apache-2.0；[C-RADIOv3-H](https://huggingface.co/nvidia/C-RADIOv3-H) 采用 NVIDIA Open Model License。
 - TSRG 项目开发者于 2026-09-28 在会话中明确确认其开发成果并同意公开。素材来源交叉表结构核验已通过，但这不取代对第三方条款的遵守。适配器发布按非商业研究用途说明，不得将 TSRG 自有工具代码的 MIT 范围直接套用至 Puffin 基础模型或外部组件。
 
-**拟交付位置（尚未发布）**：本使用仓库 GitHub Release；本轮已经制作本地私有审核包 `TSRG-R19-Epoch3-LoRA-v0.1.0-rc1_PRIVATE-REVIEW.zip`，包 SHA256 `91119dd6408d9108e553ba7857d512f02d8b159c7c0021b6309f3d1c9386ef56`。内含原样的两个适配器文件、SHA256 校验单、发布说明及完整 Puffin 上游许可，不含科研档案中的训练数据、优化器权重和旅游图片。正式公开后更新实际 Release URL 和文件摘要。
+**拟交付位置（尚未发布）**：本使用仓库 GitHub Release；本轮已经制作本地正式候选发布包 `TSRG-R19-Epoch3-LoRA-v0.1.0-rc1.zip`，包 SHA256 `5c277a6a467f0d3e4f8befd53821247aa6c7691ce56e31ed1ecef8964e3ab076`。内含原样的两个适配器文件、SHA256 校验单、发布说明及完整 Puffin 上游许可，不含科研档案中的训练数据、优化器权重和旅游图片。正式公开后更新实际 Release URL 和文件摘要。
