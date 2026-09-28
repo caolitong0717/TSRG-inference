@@ -40,6 +40,6 @@ python tools/build_download_zip.py
 
 最后一项生成 `dist/TSRG-inference-v0.1.0-rc1.zip`，内部附有 `MANIFEST_SHA256.txt` 校验单。GitHub Actions 也会自动构建供有权限成员下载的工作流 Artifact。精简包包含代码、说明、依赖和测试，不携带原始第三方模型、R19 权重、训练数据及旅游图片。
 
-**计划公开模式**：最终提供代码与 R19 Epoch-3 LoRA 两个独立下载入口。授权审查进行中，当前仓库与 R19 权重均未公开；使用者在获得适配器授权前仍不能完成全部推理部署。
+**发布准备状态**：项目开发者已同意公开自有代码与 R19 Epoch-3 LoRA。经过源文件核验的权重已上传至本仓库的 **Release Draft（未发布草稿）**，正式公开下载尚未开启；使用者仍需从 Puffin 官方自行获取基础模型，且应遵守上游非商业用途、署名和第三方许可条件。原始研究仓库、训练图片和历史实验档案继续保持 Private。
 
 相关说明：[GPU 验收记录](docs/INFERENCE_QUICKSTART_CN.md) · [R19 模型卡（待授权）](docs/R19_MODEL_CARD_CN.md) · [公开授权审核记录](docs/PUBLIC_RELEASE_AUDIT_CN.md) · [公开前审核要求](docs/RELEASE_GATE_CN.md) · [第三方来源](THIRD_PARTY_NOTICES.md) · [独立代码许可](LICENSE)。
