@@ -4,7 +4,7 @@
 
 这里存放已通过实际 GPU 验收的独立推理代码，服务于其他研究者下载和使用。原始 R18—R20 V3 训练 Notebook、完整研究记录、正式测试输出以及原始图片保留在独立科研档案库 `TSRG`，不会同步到本使用仓库。
 
-> **状态：v0.1.0-rc1，当前 Private。** 独立命令行已在 Kaggle 双 Tesla T4、FP16 环境中对新照片成功运行，结果与原 Notebook 同图结果一致；这项验证不替代冻结的 R20 V3 BF16 正式测试，也没有新增准确性结论。当前没有图形化网页、多视角图片生成或自动景点分类功能。
+> **状态：v0.1.0-rc1，Pre-release 已发布；仓库公开前仍仅有授权成员可下载。** 独立命令行已在 Kaggle 双 Tesla T4、FP16 环境中对新照片成功运行，结果与原 Notebook 同图结果一致；这项验证不替代冻结的 R20 V3 BF16 正式测试，也没有新增准确性结论。当前没有图形化网页、多视角图片生成或自动景点分类功能。
 
 ## 它能做什么
 
@@ -12,7 +12,7 @@
 
 ## 如何下载、安装和运行
 
-请从 [保姆级中文使用说明](DOWNLOAD_README_CN.md) 开始；需要完整的服务器部署命令及文件夹示意，可直接查看 [两块 GPU 部署教程](docs/DEPLOY_CN.md)。准备两块 CUDA GPU，以及从官方获得的 Puffin 源码和基础模型 `Puffin-Base.pth`；另需取得授权访问的 R19 Epoch-3 LoRA 适配器（程序检查 SHA256）。GPU 版 PyTorch 应按设备驱动单独安装，随后安装本仓库 `requirements-inference.txt`。已验证版本为 PyTorch 2.10.0、Transformers 5.0.0、PEFT 0.19.1。
+请从 [保姆级中文使用说明](DOWNLOAD_README_CN.md) 开始；需要完整的服务器部署命令及文件夹示意，可直接查看 [两块 GPU 部署教程](docs/DEPLOY_CN.md)。准备两块 CUDA GPU，以及从官方获得的 Puffin 源码和基础模型 `Puffin-Base.pth`；另需从 [v0.1.0-rc1 Release](https://github.com/caolitong0717/TSRG-inference/releases/tag/v0.1.0-rc1) 单独下载 R19 Epoch-3 LoRA 适配器（程序检查 SHA256）。GPU 版 PyTorch 应按设备驱动单独安装，随后安装本仓库 `requirements-inference.txt`。已验证版本为 PyTorch 2.10.0、Transformers 5.0.0、PEFT 0.19.1。
 
 在本仓库根目录运行命令（下列路径是示例，需根据实际文件位置修改）：
 
@@ -40,6 +40,6 @@ python tools/build_download_zip.py
 
 最后一项生成 `dist/TSRG-inference-v0.1.0-rc1.zip`，内部附有 `MANIFEST_SHA256.txt` 校验单。GitHub Actions 也会自动构建供有权限成员下载的工作流 Artifact。精简包包含代码、说明、依赖和测试，不携带原始第三方模型、R19 权重、训练数据及旅游图片。
 
-**发布准备状态**：项目开发者已同意公开自有代码与 R19 Epoch-3 LoRA。经过源文件核验的权重已上传至本仓库的 **Release Draft（未发布草稿）**，正式公开下载尚未开启；使用者仍需从 Puffin 官方自行获取基础模型，且应遵守上游非商业用途、署名和第三方许可条件。原始研究仓库、训练图片和历史实验档案继续保持 Private。
+**R19 权重独立下载**：[Release v0.1.0-rc1](https://github.com/caolitong0717/TSRG-inference/releases/tag/v0.1.0-rc1) · [模型 ZIP](https://github.com/caolitong0717/TSRG-inference/releases/download/v0.1.0-rc1/TSRG-R19-Epoch3-LoRA-v0.1.0-rc1.zip)，SHA256 `5c277a6a467f0d3e4f8befd53821247aa6c7691ce56e31ed1ecef8964e3ab076`。发布仍属于研究用候选版，用户须另从 Puffin 官方获得基础模型并遵守其非商业及署名条件。本仓库代码采用 LICENSE 中限定范围的 MIT 条款，不覆盖 R19 或上游模型；原始科研仓库、训练图片与历史档案继续 Private。
 
-相关说明：[GPU 验收记录](docs/INFERENCE_QUICKSTART_CN.md) · [R19 模型卡（待授权）](docs/R19_MODEL_CARD_CN.md) · [公开授权审核记录](docs/PUBLIC_RELEASE_AUDIT_CN.md) · [公开前审核要求](docs/RELEASE_GATE_CN.md) · [第三方来源](THIRD_PARTY_NOTICES.md) · [独立代码许可](LICENSE)。
+相关说明：[GPU 验收记录](docs/INFERENCE_QUICKSTART_CN.md) · [R19 模型卡](docs/R19_MODEL_CARD_CN.md) · [公开授权审核记录](docs/PUBLIC_RELEASE_AUDIT_CN.md) · [公开前审核要求](docs/RELEASE_GATE_CN.md) · [第三方来源](THIRD_PARTY_NOTICES.md) · [独立代码许可](LICENSE)。
