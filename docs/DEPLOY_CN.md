@@ -1,6 +1,6 @@
 # TSRG 服务器部署步骤（研究版 v0.1.0-rc1）
 
-本教程面向具有基本终端操作能力、已获授权访问 R19 微调权重的研究者。以 Linux/Bash 和两块 CUDA GPU 为例；实际验证平台为 Kaggle 双 Tesla T4，PyTorch 2.10.0 + Transformers 5.0.0 + PEFT 0.19.1，T4 采用 FP16。普通 Windows 笔记本、单显卡和纯 CPU 模型推理尚未验证。完整安装期间可能需要联网访问 GitHub 和 Hugging Face。
+本教程面向具有基本终端操作能力的研究者；仓库尚未公开时仍需仓库读取权限。以 Linux/Bash 和两块 CUDA GPU 为例；实际验证平台为 Kaggle 双 Tesla T4，PyTorch 2.10.0 + Transformers 5.0.0 + PEFT 0.19.1，T4 采用 FP16。普通 Windows 笔记本、单显卡和纯 CPU 模型推理尚未验证。完整安装期间可能需要联网访问 GitHub 和 Hugging Face。
 
 ## 1. 获取 TSRG 使用版与官方代码
 
@@ -12,7 +12,7 @@ git clone https://github.com/KangLiao929/Puffin.git upstream/Puffin
 test -f upstream/Puffin/Puffin/src/models/radiov3/hf_model.py
 ```
 
-如果当前仓库仍是 Private，请先由仓库所有者邀请你成为有权访问的成员。上面的 Puffin 仓库结构已按其官方顶层 `Puffin/` 子目录配置。该仓库源码的许可和第三方模型权重应分别遵守。
+仓库公开前需要所有者邀请访问；公开后可直接克隆。上面的 Puffin 仓库结构已按其官方顶层 `Puffin/` 子目录配置。该仓库源码的许可和第三方模型权重应分别遵守。
 
 ## 2. 准备 Python 环境及依赖
 
@@ -28,13 +28,13 @@ python -m tsrg.inference --help
 ## 3. 放置两个模型资源
 
 - 从 [Puffin 官方模型页](https://huggingface.co/KangLiao/Puffin)取得 `Puffin-Base.pth`，放到 `models/Puffin-Base.pth`。
-- 从项目所有者授权的 R19 原始归档中取出 **Epoch 3** 的 `qwen_lora` 文件夹，放到 `models/r19/epoch_3/qwen_lora/`。确认该文件夹里同时有 `adapter_config.json` 和 `adapter_model.safetensors`。本程序自动检验适配器 SHA256：
+- 从 [本仓库 v0.1.0-rc1 Release](https://github.com/caolitong0717/TSRG-inference/releases/tag/v0.1.0-rc1) 下载 [R19 权重 ZIP](https://github.com/caolitong0717/TSRG-inference/releases/download/v0.1.0-rc1/TSRG-R19-Epoch3-LoRA-v0.1.0-rc1.zip)，核验其 SHA256 为 `5c277a6a467f0d3e4f8befd53821247aa6c7691ce56e31ed1ecef8964e3ab076`，将压缩包内 **Epoch 3** 的 `qwen_lora` 文件夹解压到 `models/r19/epoch_3/qwen_lora/`。确认该文件夹里同时有 `adapter_config.json` 和 `adapter_model.safetensors`。本程序自动检验适配器 SHA256：
 
 ```text
 1dc8afa37c4947d30f58e9ae3aa260c76730dd7201a042f98fcbfd97ae0da8b0
 ```
 
-**当前 R19 归档是私有研究资源**。拥有此 GitHub 使用仓库的读取权限，并不自动意味着获得了模型适配器的访问/再分发权限；如未获授权，请先向研究项目所有者申请。基础模型和适配器均未包含在本使用仓库或源代码 ZIP 中。
+R19 适配器作为独立 Release 附件提供，不包含在源代码 ZIP 中；Puffin 基础模型从其官方单独获取。本下载版面向非商业研究用途，不授予对基础模型或第三方资源超出其许可的权利。原科研档案无需也不应向使用者提供。
 
 预期目录结构：
 
