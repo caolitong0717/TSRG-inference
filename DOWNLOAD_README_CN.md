@@ -4,6 +4,8 @@
 
 当前为**私有发布候选版**，供内部验收与获得授权的研究合作者使用。已在 Kaggle 双 Tesla T4 / FP16 环境中，使用新照片验证独立命令行完整运行；这次运行与原 Notebook 的同图结果一致。正式 R20 V3 的 BF16 测试记录不受本下载包影响。
 
+**第一次独立部署，可按 [完整两 GPU 服务器教程](docs/DEPLOY_CN.md) 的顺序复制命令操作。** 该教程也说明了 R19 私有模型的访问限制与预计文件夹结构。
+
 ## 下载后准备
 
 1. 安装具有 **两块 CUDA GPU** 的 Python 环境；已验证配置为 PyTorch 2.10.0+cu128、Transformers 5.0.0、PEFT 0.19.1，T4 使用 FP16，支持原生 BF16 的显卡可使用 BF16。单 GPU 或纯 CPU 大型模型推理尚未测试。PyTorch 请按照 [官方安装页面](https://pytorch.org/get-started/locally/) 选择与 CUDA 驱动匹配的 GPU 版本。
